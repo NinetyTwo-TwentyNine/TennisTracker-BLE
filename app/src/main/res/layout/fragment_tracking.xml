@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context=".UI.TrackingFragment">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Backhand Slice"
+        android:textAlignment="center"
+        android:textColor="#B2B2B2"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="350dp"
+        android:layout_height="225dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1"
+        app:srcCompat="@drawable/icon_tennis_guy" />
+
+    <TextView
+        android:id="@+id/lastSpeedText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last hit speed: "
+        android:textAlignment="center"
+        android:textColor="#B2B2B2"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image" />
+
+    <LinearLayout
+        android:id="@+id/chart_panel"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lastSpeedText"
+        app:layout_constraintVertical_bias="0.25">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/piechartStrength"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/piechartSpeed"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/piechartRadian"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/chartText_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chart_panel">
+
+        <TextView
+            android:id="@+id/textStrength"
+            android:layout_width="0dp"
+            android:textSize="24sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Strength"
+            android:textAlignment="center"
+            android:textColor="#B2B2B2" />
+
+        <TextView
+            android:id="@+id/textSpeed"
+            android:textSize="24sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Speed"
+            android:textAlignment="center"
+            android:textColor="#B2B2B2" />
+
+        <TextView
+            android:id="@+id/textRadian"
+            android:textSize="24sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Radian"
+            android:textAlignment="center"
+            android:textColor="#B2B2B2" />
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barchartSpeed"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chartText_panel" />
+
+    <TextView
+        android:id="@+id/textSpeedBars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speed results"
+        android:textAlignment="center"
+        android:textColor="#B2B2B2"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barchartSpeed" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
